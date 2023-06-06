@@ -12,3 +12,10 @@
 ## Тестирование
 Для тестирования программы необходимо выполнить тесты решения задачи и визуализации на разном количестве вершин, а также на разных типах ребрах. Тестирование программы представленно в видео на YouTube: [https://youtu.be/yMU_4ZuSATE](https://www.youtube.com/watch?v=ou-pzoeFYTw&t=3s&ab_channel=ja13k0)
 ## Результаты работы программы
+![result](reports/testgraph.jpg)
+Рис. 1 - Результат работы программы.
+## Диаграмма UML
+![diagramm](reports/classdiagramm.jpg)
+Рис. 2 - Диаграмма классов.
+## Исходный код
+Исходный код представлен в репозитории: https://github.com/Pave1Tokarev/ARM-and-Salesman/tree/main/Salesman
