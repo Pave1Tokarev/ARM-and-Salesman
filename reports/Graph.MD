@@ -16,6 +16,7 @@
 Рис. 1 - Результат работы программы.
 ## Диаграмма UML
 ![diagramm](classdiagramm.jpg)
+
 Рис. 2 - Диаграмма классов.
 ## Исходный код
 Исходный код представлен в репозитории: https://github.com/Pave1Tokarev/ARM-and-Salesman/tree/main/Salesman
