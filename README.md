@@ -6,5 +6,6 @@
 Ссылка на YouTube: https://www.youtube.com/watch?v=ou-pzoeFYTw
 ## Разработчики
 Разработал студент ПНИПУ гр. РИС-22-1б Токарев Павел
+
 Контактные данные ltsmilik@gmail.com
 
