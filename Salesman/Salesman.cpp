@@ -8,32 +8,38 @@ struct CurrBranch {
     int distance;
     CurrBranch(int vertex, const std::vector<int>& p, int dist) : currentVertex(vertex), path(p), distance(dist) {}
 };
-std::pair<int, std::vector<int>> solveTravelingSalesmanProblem(std::vector<std::vector<int>>& graph, int vrtcnt) {
+std::pair<int, std::vector<int>> solveTravelingSalesmanProblem(std::vector<std::vector<int>>& matrix, int vrtcnt) {
+    
     int n = vrtcnt;
     std::vector<int> vertexIndices(n);
-    for (int i = 0; i < n; ++i) {
-        vertexIndices[i] = i;
-    }
-    int minDistance = INT_MAX;
+    int minDistance = 10000000;
     std::vector<int> minPath;
     std::vector<CurrBranch> edgestatus;
     edgestatus.emplace_back(vertexIndices[0], std::vector<int>{vertexIndices[0]}, 0);
+    for (int i = 0; i < n; ++i) {
+        vertexIndices[i] = i;
+    }
+
+    
     while (!edgestatus.empty()) {
         auto currentState = edgestatus.back();
         edgestatus.pop_back();
         if (currentState.path.size() == n) {
-            int finalDistance = currentState.distance + graph[currentState.currentVertex][vertexIndices[0]];
+            int finalDistance = currentState.distance + matrix[currentState.currentVertex][vertexIndices[0]];
+            
             if (finalDistance < minDistance) {
                 minDistance = finalDistance;
                 minPath = currentState.path;
                 minPath.push_back(vertexIndices[0]);
             }
         }
+        
+        
         else {
             for (int i = 1; i < n; ++i) {
                 int nextVertex = vertexIndices[i];
                 if (std::find(currentState.path.begin(), currentState.path.end(), nextVertex) == currentState.path.end()) {
-                    int distanceToNext = graph[currentState.currentVertex][nextVertex];
+                    int distanceToNext = matrix[currentState.currentVertex][nextVertex];
                     if (distanceToNext != 0 && currentState.distance + distanceToNext < minDistance) {
                         std::vector<int> newPath = currentState.path;
                         newPath.push_back(nextVertex);
